@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — WebFrame Mobile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #21262d;
+      --accent: #f0883e;
+      --accent-dim: rgba(240,136,62,.12);
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --code-bg: #1c2128;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Grid noise texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,.018) 39px, rgba(255,255,255,.018) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.018) 39px, rgba(255,255,255,.018) 40px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 32px;
+      margin-bottom: 48px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(240,136,62,.3);
+      border-radius: 3px;
+      padding: 3px 10px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      color: var(--text);
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .meta {
+      margin-top: 14px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .meta-item::before {
+      content: '// ';
+      color: var(--accent);
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    p {
+      color: #c9d1d9;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    ul li {
+      color: #c9d1d9;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .highlight-box {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: .92rem;
+    }
+
+    .highlight-box p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    @media (max-width: 540px) {
+      .wrapper { padding: 36px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+      <div class="badge">AZ Sistemas ME</div>
+      <h1>Política de Privacidade<br /><span>WebFrame Mobile</span></h1>
+      <div class="meta">
+        <span class="meta-item">Versão 1.0</span>
+        <span class="meta-item">Vigência: 09 de abril de 2025</span>
+        <span class="meta-item">Plataforma: Android</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>1. Identificação do Controlador</h2>
+      <p>
+        Este aplicativo é desenvolvido e mantido por <strong>AZ Sistemas ME</strong>, empresa especializada em soluções para TOTVS Protheus e desenvolvimento .NET.
+      </p>
+      <div class="highlight-box">
+        <p>
+          Para dúvidas ou solicitações relacionadas à privacidade, entre em contato pelo e-mail:
+          <a href="mailto:contato@azsistemas.com.br">contato@azsistemas.com.br</a>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. O que é o WebFrame Mobile</h2>
+      <p>
+        O <strong>WebFrame Mobile</strong> é um aplicativo Android de apontamento de produção integrado ao ERP <strong>TOTVS Protheus</strong>. Ele permite que usuários autorizados registrem ocorrências de chão de fábrica, consultem ordens de produção e realizem leituras de código de barras/QR Code em dispositivos móveis, inclusive hardwares industriais como Zebra.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Dados Coletados</h2>
+      <p>O aplicativo coleta e processa exclusivamente os dados necessários para seu funcionamento operacional:</p>
+      <ul>
+        <li><strong>Credenciais de autenticação:</strong> usuário e senha utilizados para acesso ao ambiente TOTVS Protheus da empresa do usuário. As credenciais são transmitidas diretamente ao servidor Protheus configurado pela empresa e não são armazenadas permanentemente no dispositivo.</li>
+        <li><strong>Dados de apontamento:</strong> informações de produção inseridas pelo usuário (ordem, quantidade, lote, etc.), que são enviadas ao servidor Protheus da empresa.</li>
+        <li><strong>Dados de câmera/scanner:</strong> utilizados exclusivamente para leitura de códigos de barras e QR Codes durante o apontamento. Nenhuma imagem é armazenada ou transmitida.</li>
+        <li><strong>Endereço do servidor:</strong> URL do ambiente Protheus configurado pelo administrador da empresa, armazenado localmente no dispositivo para conexão.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Dados Não Coletados</h2>
+      <p>Declaramos expressamente que o WebFrame Mobile <strong>não coleta</strong>:</p>
+      <ul>
+        <li>Dados pessoais sensíveis (CPF, dados biométricos, localização geográfica)</li>
+        <li>Contatos, fotos ou arquivos do dispositivo</li>
+        <li>Dados de navegação ou comportamento fora do aplicativo</li>
+        <li>Informações para fins publicitários ou de rastreamento</li>
+        <li>Qualquer dado de menores de idade</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Finalidade do Tratamento</h2>
+      <p>Os dados são utilizados exclusivamente para:</p>
+      <ul>
+        <li>Autenticar o usuário no ambiente Protheus configurado pela empresa contratante</li>
+        <li>Registrar e consultar apontamentos de produção no ERP</li>
+        <li>Garantir o funcionamento técnico do aplicativo</li>
+      </ul>
+      <p>
+        Não há compartilhamento de dados com terceiros, redes de publicidade ou serviços de análise externos. Todos os dados fluem exclusivamente entre o dispositivo do usuário e o servidor TOTVS Protheus da empresa contratante.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Armazenamento e Segurança</h2>
+      <p>
+        Os dados operacionais (endereço do servidor, preferências do aplicativo) são armazenados localmente no dispositivo usando armazenamento seguro do Android (<em>SharedPreferences</em> criptografado). Nenhum dado de produção ou credenciais são persistidos em servidores de terceiros.
+      </p>
+      <p>
+        A segurança da comunicação com o servidor Protheus depende da infraestrutura configurada pela empresa contratante (recomenda-se HTTPS/TLS).
+      </p>
+    </section>
+
+    <section>
+      <h2>7. Permissões do Aplicativo</h2>
+      <p>O aplicativo solicita as seguintes permissões do Android:</p>
+      <ul>
+        <li><strong>INTERNET:</strong> necessária para comunicação com o servidor TOTVS Protheus</li>
+        <li><strong>CAMERA:</strong> utilizada exclusivamente para leitura de códigos de barras e QR Codes</li>
+      </ul>
+      <p>Nenhuma outra permissão é solicitada ou necessária.</p>
+    </section>
+
+    <section>
+      <h2>8. Direitos do Usuário (LGPD)</h2>
+      <p>
+        Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), o usuário tem direito a:
+      </p>
+      <ul>
+        <li>Confirmação da existência de tratamento de seus dados</li>
+        <li>Acesso, correção ou exclusão de dados pessoais</li>
+        <li>Portabilidade dos dados</li>
+        <li>Revogação do consentimento a qualquer momento</li>
+      </ul>
+      <p>
+        Para exercer esses direitos, entre em contato via <a href="mailto:contato@azsistemas.com.br">contato@azsistemas.com.br</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Aplicativo Corporativo</h2>
+      <div class="highlight-box">
+        <p>
+          O WebFrame Mobile é destinado exclusivamente a uso corporativo/empresarial. A empresa contratante é responsável pela gestão de acesso, pela segurança de seu ambiente Protheus e pelo cumprimento das obrigações de privacidade perante seus próprios colaboradores usuários do aplicativo.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>10. Alterações nesta Política</h2>
+      <p>
+        Esta política pode ser atualizada para refletir mudanças no aplicativo ou na legislação aplicável. A data de vigência será atualizada a cada revisão. Recomendamos consulta periódica a esta página.
+      </p>
+    </section>
+
+    <footer>
+      <span>© 2025 AZ Sistemas ME — Todos os direitos reservados</span>
+      <span>WebFrame Mobile · TOTVS Protheus Integration</span>
+    </footer>
+
+  </div>
+</body>
+</html>
